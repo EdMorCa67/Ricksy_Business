@@ -1,22 +1,20 @@
 package edu.teamrocket.payment;
 
-public class CreditCard {
+public class CreditCard implements PaymentMethod {
 
  
 
     private final String owner;
     private final String number;
-    private double credit;
-    private final String SYMBOL;
+    private double credit = 3000d;
+    private final String SYMBOL = "EZI";
 
-    CreditCard(String owner, String number) {
+    public CreditCard(String owner, String number) {
         this.owner = owner;
         this.number = number;
-        this.credit = 0.0;
-        this.SYMBOL = "EZI";
     }
 
-    Boolean pay (double charge) {
+    public boolean pay (double charge) {
         if (this.credit >= charge) {
             this.credit -= charge;
             return true;
@@ -24,23 +22,22 @@ public class CreditCard {
 
     }
 
-    String number() {
+    public String number() {
         return this.number;
     }
 
-    String CardOwner() {
+    public String cardOwner() {
         return this.owner;
     }
 
-    Double credit() {
+    public double credit() {
         return this.credit;
     }
-
     
     @Override
     public String toString() {
         return "CreditCard [owner=" + owner + ", number=" + number + ", credit=" + credit + ", SYMBOL=" + SYMBOL
-                + ", number()=" + number() + ", CardOwner()=" + CardOwner() + ", credit()=" + credit() + "]";
+                + ", number()=" + number() + ", cardOwner()=" + cardOwner() + ", credit()=" + credit() + "]";
     }
 }
 
