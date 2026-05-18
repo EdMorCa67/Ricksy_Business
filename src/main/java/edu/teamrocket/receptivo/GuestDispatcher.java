@@ -1,4 +1,4 @@
-package edu.teamrocket.dispatchers;
+package edu.teamrocket.receptivo;
 
 import edu.teamrocket.payment.CreditCard;
 

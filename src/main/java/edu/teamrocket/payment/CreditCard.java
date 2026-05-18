@@ -15,7 +15,7 @@ public class CreditCard implements PaymentMethod {
     }
 
     public boolean pay (double charge) {
-        if (this.credit >= charge) {
+        if (this.credit -1 >= charge) {
             this.credit -= charge;
             return true;
         }        return false;
