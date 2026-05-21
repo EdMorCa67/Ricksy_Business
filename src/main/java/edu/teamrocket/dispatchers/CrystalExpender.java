@@ -18,24 +18,18 @@ public class CrystalExpender implements GuestDispatcher{
     }
 
     public void dispatch (CreditCard card){
-        if (this.containsCard(card.number())) {
-            return;
-        }
+        if (this.stock > 0 && card.pay(itemCost))
+            this.stock -= 1;
 
-        Map.Entry<String, String> ufo = flota.entrySet().stream()
-            .filter(entry -> entry.getValue() == null)
-            .findFirst()
-            .orElse(null);
-
-        if (ufo == null) {
-            return;
-        }
-
-        if (card.pay(fee)) {
-            ufo.setValue(card.number());
-        }
     }
 
+    
+
+
+    @Override
+    public String toString() {
+        return "CrystalExpender [stock=" + stock + ", itemCost=" + itemCost + "]";
+    }
 
     public int stock () {
         return this.stock;
