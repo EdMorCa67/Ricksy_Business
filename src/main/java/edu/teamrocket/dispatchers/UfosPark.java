@@ -49,14 +49,13 @@ public class UfosPark implements GuestDispatcher {
 
     @Override
     public String toString(){
-        return "UfosPark{" +
-                "fee=" + fee +
-                ", flota=" + flota +
-                '}';
+        java.util.List<String> keys = new java.util.ArrayList<>(flota.keySet());
+        java.util.Collections.sort(keys);
+        return keys.toString();
     }
 
     public boolean containsCard(String cardNumber){
-        return flota.containsValue(cardNumber);
+        return this.flota.containsValue(cardNumber);
     }
 
     Collection<String> cardNumbers() {
