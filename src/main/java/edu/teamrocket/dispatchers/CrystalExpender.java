@@ -2,10 +2,8 @@ package edu.teamrocket.dispatchers;
 
 import edu.teamrocket.receptivo.GuestDispatcher;
 
-import java.util.Map;
 
 import edu.teamrocket.payment.CreditCard;
-import edu.teamrocket.payment.PaymentMethod;
 
 public class CrystalExpender implements GuestDispatcher{
 
