@@ -25,6 +25,7 @@
 
 package edu.teamrocket;
 import edu.teamrocket.payment.CreditCard;
+import edu.teamrocket.receptivo.Receptivo;
 import edu.teamrocket.dispatchers.*;
 
 public class RicksyBusiness {

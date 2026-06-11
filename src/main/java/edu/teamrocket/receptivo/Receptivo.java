@@ -1,20 +1,26 @@
 package edu.teamrocket.receptivo;
+
 import edu.teamrocket.payment.CreditCard;
-import edu.teamrocket.receptivo.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Receptivo {
-    Receptivo() {
-        return;
+    private final List<GuestDispatcher> dispatchers = new ArrayList<>();
+
+    public Receptivo() {
     }
 
-    void registrar(GuestDispatcher dispatcher) {
-        
+    public void registra(GuestDispatcher dispatcher) {
+        if (dispatcher == null) {
+            return;
+        }
+        this.dispatchers.add(dispatcher);
     }
 
-    void dispatch (CreditCard card){
-        
+    public void dispatch(CreditCard card) {
+        for (GuestDispatcher dispatcher : dispatchers) {
+            dispatcher.dispatch(card);
+        }
     }
-
-
-
 }

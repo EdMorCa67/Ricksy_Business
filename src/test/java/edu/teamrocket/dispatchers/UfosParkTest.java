@@ -2,24 +2,24 @@ package edu.teamrocket.dispatchers;
 
 import edu.teamrocket.payment.CreditCard;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.junit.Before;
 
 public class UfosParkTest {
 
     public UfosPark ufos = null;
     String[] ovnis = { "unx", "dox", "trex" };
 
-    @Before
+    @BeforeEach
     public void setupUfosPark() {
         ufos = new UfosPark();
-        assertNotNull("Parque de UFOS creados", ufos);
+        assertNotNull(ufos, "Parque de UFOS creados");
         for (String ovni : ovnis) {
 			ufos.add(ovni);
         }

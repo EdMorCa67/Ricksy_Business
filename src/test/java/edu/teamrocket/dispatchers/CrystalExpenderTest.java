@@ -1,25 +1,25 @@
 package edu.teamrocket.dispatchers;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import edu.teamrocket.payment.CreditCard;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 public class CrystalExpenderTest {
 
     private CrystalExpender expender = null;
 
-    @Before
+    @BeforeEach
     public void setupExpender() {
         expender = new CrystalExpender(100, 50.0);
-        assertNotNull("Expender creado", expender);
+        assertNotNull(expender, "Expender creado");
     }
 
     @Test 
     public void constructortest() {  
-        assertNotNull("Expender creado", expender);      
+        assertNotNull(expender, "Expender creado");      
         assertEquals(100, expender.stock());
     }
 

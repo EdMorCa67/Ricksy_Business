@@ -1,22 +1,22 @@
 package edu.teamrocket.payment;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 public class CreditCardTest {
 
     private PaymentMethod card = null;
 
-    @Before
+    @BeforeEach
     public void setupCard() {
         card = new CreditCard("Abradolf Lincler", "4916119711304546");
-        assertNotNull("CreditCard creada", card);
+        assertNotNull(card, "CreditCard creada");
     }
     @Test public void constructorTest() {  
-        assertNotNull("CreditCard creada", card);      
+        assertNotNull(card, "CreditCard creada");      
         assertEquals("4916119711304546", card.number());
     }
 
